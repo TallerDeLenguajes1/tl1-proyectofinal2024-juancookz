@@ -1,0 +1,99 @@
+# Ignore Visual Studio temporary files, build results, and
+# folder configuration options.
+#
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (Mono Auto Generated)
+mono_crash.*
+
+# User-specific files (VSCode)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.vscode/*.code-workspace
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file
+Desktop.ini
+$RECYCLE.BIN/
+
+# Recycle Bin used on file shares
+*.~lock.*#
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# ==================================================================
+# CSharp
+# ==================================================================
+
+# Visual Studio temp files
+*.tmp
+*.temp
+
+# Visual Studio 2019/2022
+.vs/
+.vscode/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# DotNetCore
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Auto generated files (backup)
+*.bak
+*.swp
+
+# File containing user secrets
+secrets.json
+
+# ASP.NET Cache Files
+aspnet_client/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# NuGet Packages
+*.nupkg
+*.snupkg
+
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# Uncomment if necessary however generally it will be regenerated when needed
+#!**/packages/NUnit.*/tools/**
+
+# Microsoft Azure Web App publish settings. Comment if needed.
+# PublishOutput/
+# The build output folder can be ignored.
+bin/
+obj/
+.DS_Store
