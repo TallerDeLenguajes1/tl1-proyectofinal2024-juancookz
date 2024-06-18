@@ -3,8 +3,8 @@ public class Producto
 public string Nombre { get; set; }
 public int Precio { get; set; }
 }
-public class Frase{
-    public string quote;
-    public string author
-    ;
-}
+public class claseFrase
+    {
+        public string quote { get; set; }
+        public string author { get; set; }
+    }
