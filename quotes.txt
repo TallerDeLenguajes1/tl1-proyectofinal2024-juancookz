@@ -1,0 +1,18 @@
+"author": "Walter White" 65
+"author": "Jesse Pinkman" 33 
+"author": "Saul Goodman" 21
+"author": "Hank Schrader" 15
+"author": "Mike Ehrmantraut"14
+"author": "Gustavo Fring" 8
+"author": "Skyler White" 6
+
+"author": "Badger" 1
+"author": "The fly" 1
+"author": "Walter White Jr" 1
+"author": "Tuco Salamanca"1
+"author": "Stephen King" 1
+"author": "Gale Boetticher" 1
+"author": "Todd" 1
+"author": "Uncle Jack" 1
+"author": "Tio Salamanca" 1
+"author": "Marie Schrader" 1
