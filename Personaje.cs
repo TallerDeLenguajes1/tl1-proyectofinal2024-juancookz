@@ -75,7 +75,7 @@ public class Personaje
     {
         Random random = new Random();
         DateTime fecNac = new DateTime(2000, 1, 1);
-        fecNac = fecNac.AddDays(random.Next(-(365 * 30),365));
+        fecNac = fecNac.AddDays(random.Next(-(365 * 30), 365));
         return fecNac;
     }
 
@@ -83,9 +83,9 @@ public class Personaje
     {
         System.Console.WriteLine("PERSONAJE:");
         System.Console.WriteLine("--- DATOS ---");
+        System.Console.WriteLine("Tipo: " + tipo);
         System.Console.WriteLine("Nombre: " + Nombre);
         System.Console.WriteLine("Apodo: " + Apodo);
-        //System.Console.WriteLine("Tipo: " + Tipo);
         System.Console.WriteLine("FecNac: " + FechaDeNacimiento.Day + "/" + FechaDeNacimiento.Month + "/" + FechaDeNacimiento.Year);
         System.Console.WriteLine("Edad: " + Edad(FechaDeNacimiento));
         System.Console.WriteLine("--- CARACTERISTICAS ---");
