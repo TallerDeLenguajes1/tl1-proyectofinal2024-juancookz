@@ -32,53 +32,6 @@ public class Personaje
     public int Armadura { get; set; }
     public int Salud { get; set; }
 
-    public Personaje Crear()
-    {
-        Random random = new Random();
-        Personaje personaje = new Personaje();
-        //CARACTERISTICAS
-        personaje.Velocidad = random.Next(1, 10);
-        personaje.Destreza = random.Next(1, 5);
-        personaje.Fuerza = random.Next(1, 10);
-        personaje.Nivel = random.Next(1, 10);
-        personaje.Armadura = random.Next(1, 10);
-        personaje.Salud = 100;
-        //DATOS
-        personaje.tipo = generarTipoAleatorio();
-        personaje.FechaDeNacimiento = generarFechaAleatoria();
-        return personaje;
-    }
-    private Personaje.Tipo generarTipoAleatorio()
-    {
-        Random random = new Random();
-        Personaje.Tipo type = new Personaje.Tipo();
-        switch (random.Next(0, 3))
-        {
-            case 0:
-                type = Personaje.Tipo.Defensa;
-                break;
-            case 1:
-                type = Personaje.Tipo.Soldado;
-                break;
-            case 2:
-                type = Personaje.Tipo.Medico;
-                break;
-            case 3:
-                type = Personaje.Tipo.Espia;
-                break;
-            default:
-                break;
-        }
-        return type;
-    }
-    public DateTime generarFechaAleatoria()
-    {
-        Random random = new Random();
-        DateTime fecNac = new DateTime(2000, 1, 1);
-        fecNac = fecNac.AddDays(random.Next(-(365 * 30), 365));
-        return fecNac;
-    }
-
     public void Mostrar()
     {
         System.Console.WriteLine("PERSONAJE:");

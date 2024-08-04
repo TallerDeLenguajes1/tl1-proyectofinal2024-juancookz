@@ -1,5 +1,4 @@
-﻿
-Personaje pj = new Personaje();
+﻿FabricaDePersonajes fabrica = new FabricaDePersonajes();
+Personaje personaje = fabrica.CrearPersonaje();
 Console.Clear();
-pj = pj.Crear();
-pj.Mostrar();
+personaje.Mostrar();
