@@ -1,5 +1,5 @@
 class PersonajesJson
-{
+{/*
     public void GuardarPersonajes(List<Personaje> ListaPersonajes, string nombreArchivo)
     {
     }
@@ -10,5 +10,5 @@ class PersonajesJson
     }
     public void Existe()
     {
-    }
+    }*/
 }
