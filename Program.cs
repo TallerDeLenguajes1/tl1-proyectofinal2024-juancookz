@@ -5,13 +5,25 @@ using System.Collections.Generic;
 ﻿FabricaDePersonajes fabrica = new FabricaDePersonajes();
 PersonajesJson personajesJson = new PersonajesJson();
 List<Personaje> listaPersonajes = new List<Personaje>();
+Console.Clear();
+/*
 for (int i = 0; i < 10; i++)
 {
     Personaje personaje = fabrica.CrearPersonaje();
     listaPersonajes.Add(personaje);
 }
+foreach (var personaje in listaPersonajes)
+{
+    personaje.Mostrar();
+}
 personajesJson.GuardarPersonajes(listaPersonajes, "players_list");
+*/
 
+List<Personaje>listaPjsJson = personajesJson.LeerPersonajes("players_list");
+foreach (var personaje in listaPjsJson)
+{
+    personaje.Mostrar();
+}
 /*
 HttpClient client = new HttpClient();
 string apiUrl = "https://api.breakingbadquotes.xyz/v1/quotes/2";
