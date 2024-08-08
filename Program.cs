@@ -3,10 +3,16 @@ using System.Text.Json;
 using System.Collections.Generic;
 
 ﻿FabricaDePersonajes fabrica = new FabricaDePersonajes();
-Personaje personaje = fabrica.CrearPersonaje();
-Console.Clear();
-personaje.Mostrar();
+PersonajesJson personajesJson = new PersonajesJson();
+List<Personaje> listaPersonajes = new List<Personaje>();
+for (int i = 0; i < 10; i++)
+{
+    Personaje personaje = fabrica.CrearPersonaje();
+    listaPersonajes.Add(personaje);
+}
+personajesJson.GuardarPersonajes(listaPersonajes, "players_list");
 
+/*
 HttpClient client = new HttpClient();
 string apiUrl = "https://api.breakingbadquotes.xyz/v1/quotes/2";
 
@@ -30,19 +36,4 @@ catch (HttpRequestException)
 {
     System.Console.WriteLine("hubo un error con la API");
     throw;
-}
-
-//Creamos una instancia de producto
-Producto papas = new Producto
-{
-    Nombre = "Papas Fritas",
-    Precio = 30
-};
-//Serializamos en JSON el producto y lo guardamos como un string
-string jsonString = JsonSerializer.Serialize(papas);
-//Escribimos la cadena que se serializo
-Console.WriteLine(jsonString);
-//Ahora Deserealizamos la cadena JSNON y creamos un objeto Producto a partir de ella
-Producto producto = JsonSerializer.Deserialize<Producto>(jsonString);
-//Escribimos el producto que se deserializo
-Console.WriteLine($"Nombre: {producto.Nombre} Precio: {producto.Precio}");
+}*/
