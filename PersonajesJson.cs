@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Text.Json;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text.RegularExpressions;
 class PersonajesJson
 {
     public void GuardarPersonajes(List<Personaje> ListaPersonajes, string nombreArchivo)
@@ -21,7 +23,22 @@ class PersonajesJson
 
         return ListaPersonajes;
     }
-    
+
+    public bool Existe(string nombreArchivo)
+    {
+        // intentamos ejecutar el siguiente bloque
+        try
+        {
+            return System.IO.File.Exists(nombreArchivo) && LeerPersonajes(nombreArchivo) != null;
+        }
+        // si llega a fallar,devolvemos existencia nula
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+}
+    /*
     public void Prueba()
     {
         //Creamos una instancia de producto
@@ -38,7 +55,4 @@ class PersonajesJson
         Producto producto = JsonSerializer.Deserialize<Producto>(jsonString);
         //Escribimos el producto que se deserializo
         Console.WriteLine($"Nombre: {producto.Nombre} Precio: {producto.Precio}");
-    }
-
-
-}
+    }*/
