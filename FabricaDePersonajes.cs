@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 public class FabricaDePersonajes
 {
     private static readonly Random random = new Random();
-    public async Task<Personaje> CrearPersonaje()
+    private async Task<Personaje> CrearPersonaje()
     {
         CuerpoDeRespuestaApi respuestaApi = await ApiHelper.ObtenerDatosApi();
         Personaje personaje = new Personaje
@@ -20,6 +20,16 @@ public class FabricaDePersonajes
         };
         AsignarCaracteristicas(personaje);
         return personaje;
+    }
+    public async Task<List<Personaje>> CrearListaPersonajes()
+    {
+        List<Personaje> listaPersonajes = new List<Personaje>();
+        for (int i = 0; i < 10; i++)
+        {
+            Personaje personaje = await CrearPersonaje();
+            listaPersonajes.Add(personaje);
+        }
+        return listaPersonajes;
     }
     private void AsignarCaracteristicas(Personaje personaje)
     {

@@ -6,11 +6,7 @@ FabricaDePersonajes fabrica = new FabricaDePersonajes();
 PersonajesJson personajesJson = new PersonajesJson();
 List<Personaje> listaPersonajes = new List<Personaje>();
 
-for (int i = 0; i < 10; i++)
-{
-    Personaje personaje = await fabrica.CrearPersonaje();
-    listaPersonajes.Add(personaje);
-}
+listaPersonajes = await fabrica.CrearListaPersonajes();
 
 personajesJson.GuardarPersonajes(listaPersonajes, "players_list");
 
