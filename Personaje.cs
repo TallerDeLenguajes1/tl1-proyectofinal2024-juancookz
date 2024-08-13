@@ -33,12 +33,11 @@ public class Personaje
 
     public void Mostrar()
     {
-        System.Console.WriteLine("PERSONAJE:");
+        
         System.Console.WriteLine("--- DATOS ---");
-        System.Console.WriteLine("Tipo: " + tipo);
         System.Console.WriteLine("Nombre: " + Nombre);
-        System.Console.WriteLine("Frase: " + Frase);
-        System.Console.WriteLine("FecNac: " + FechaDeNacimiento.Day + "/" + FechaDeNacimiento.Month + "/" + FechaDeNacimiento.Year);
+        System.Console.WriteLine("Tipo: " + tipo);
+        System.Console.WriteLine("Fecha de nacimiento: " + FechaDeNacimiento.Day + "/" + FechaDeNacimiento.Month + "/" + FechaDeNacimiento.Year);
         System.Console.WriteLine("Edad: " + Edad(FechaDeNacimiento));
         System.Console.WriteLine("--- CARACTERISTICAS ---");
         System.Console.WriteLine("Velocidad: " + Velocidad);
@@ -47,5 +46,6 @@ public class Personaje
         System.Console.WriteLine("Nivel: " + Nivel);
         System.Console.WriteLine("Armadura: " + Armadura);
         System.Console.WriteLine("Salud: " + Salud);
+        System.Console.WriteLine();
     }
 }

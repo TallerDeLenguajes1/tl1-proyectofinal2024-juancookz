@@ -42,10 +42,38 @@ class HistorialJson
 {
     public void GuardarGanador(Personaje personaje, string nombreArchivo)
     {
+        List<Personaje> ListaGanadores = new List<Personaje>();
+        if (!ExisteListaPersonajes(nombreArchivo))
+        {
+            ListaGanadores.Add(personaje);
+            string json = JsonSerializer.Serialize(ListaGanadores);
+            System.IO.File.WriteAllText(nombreArchivo, json);
+        }
+        else
+        {
+            string jsonString = System.IO.File.ReadAllText(nombreArchivo);
+            ListaGanadores = JsonSerializer.Deserialize<List<Personaje>>(jsonString);
+            ListaGanadores.Add(personaje);
+            jsonString = JsonSerializer.Serialize(ListaGanadores);
+            System.IO.File.WriteAllText(nombreArchivo, jsonString);
+        }
     }
     public List<Personaje> LeerGanadores(string nombreArchivo)
     {
-        return null;
+        try
+        {
+            //Leemos el contenido del archivo en formato JSON
+            string jsonString = System.IO.File.ReadAllText(nombreArchivo);
+
+            //Deserealizamos el contenido en formato JSON y lo convertimos a lista de personajes
+            List<Personaje> ListaGanadores = JsonSerializer.Deserialize<List<Personaje>>(jsonString);
+
+            return ListaGanadores;
+        }
+        catch (Exception)
+        {
+            return null;
+        }
     }
     public bool ExisteListaPersonajes(string nombreArchivo)
     {
