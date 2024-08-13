@@ -27,7 +27,15 @@ public class FabricaDePersonajes
         for (int i = 0; i < 10; i++)
         {
             Personaje personaje = await CrearPersonaje();
-            listaPersonajes.Add(personaje);
+            //Metodo Exists, p (cada pj de la lista) entonces p.nombre ¿es igual al nombre del personaje generado?
+            if (!listaPersonajes.Exists(p => p.Nombre == personaje.Nombre))
+            {
+                listaPersonajes.Add(personaje);
+            }
+            else
+            {
+                i--;
+            }
         }
         return listaPersonajes;
     }
