@@ -10,7 +10,7 @@ public class Personaje
     }
     public Tipo tipo { get; set; }
     public string Nombre { get; set; }
-    public string Apodo { get; set; }
+    public string Frase { get; set; }
     public DateTime FechaDeNacimiento { get; set; }
     public int Edad(DateTime FecNac)
     {
@@ -23,7 +23,6 @@ public class Personaje
         }
         return edad;
     }
-
     // Características del personaje
     public int Velocidad { get; set; }
     public int Destreza { get; set; }
@@ -38,7 +37,7 @@ public class Personaje
         System.Console.WriteLine("--- DATOS ---");
         System.Console.WriteLine("Tipo: " + tipo);
         System.Console.WriteLine("Nombre: " + Nombre);
-        System.Console.WriteLine("Apodo: " + Apodo);
+        System.Console.WriteLine("Frase: " + Frase);
         System.Console.WriteLine("FecNac: " + FechaDeNacimiento.Day + "/" + FechaDeNacimiento.Month + "/" + FechaDeNacimiento.Year);
         System.Console.WriteLine("Edad: " + Edad(FechaDeNacimiento));
         System.Console.WriteLine("--- CARACTERISTICAS ---");

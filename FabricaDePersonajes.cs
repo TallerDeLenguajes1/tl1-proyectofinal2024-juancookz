@@ -1,14 +1,18 @@
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 public class FabricaDePersonajes
 {
     private static readonly Random random = new Random();
-    public Personaje CrearPersonaje()
+    public async Task<Personaje> CrearPersonaje()
     {
+        CuerpoDeRespuestaApi respuestaApi = await ApiHelper.ObtenerDatosApi();
         Personaje personaje = new Personaje
         {
             // Datos
             tipo = GenerarTipoAleatorio(),
-            Nombre = GenerarNombreAleatorio(),
-            Apodo = GenerarApodoAleatorio(),
+            Nombre = respuestaApi.Personaje.Nombre,
+            Frase = respuestaApi.Frase,
             FechaDeNacimiento = GenerarFechaAleatoria(),
             // Características
             Nivel = random.Next(1, 10),
@@ -17,6 +21,8 @@ public class FabricaDePersonajes
         AsignarCaracteristicas(personaje);
         return personaje;
     }
+
+
     private void AsignarCaracteristicas(Personaje personaje)
     {
         switch (personaje.tipo)
@@ -46,7 +52,7 @@ public class FabricaDePersonajes
                 personaje.Armadura = random.Next(1, 5);
                 break;
         }
-        
+
     }
     private Personaje.Tipo GenerarTipoAleatorio()
     {
@@ -69,15 +75,6 @@ public class FabricaDePersonajes
                 break;
         }
         return type;
-    }
-    private string GenerarNombreAleatorio()
-    {
-        return "Natalia";
-    }
-
-    private string GenerarApodoAleatorio()
-    {
-        return "Natalia";
     }
     private DateTime GenerarFechaAleatoria()
     {
