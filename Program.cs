@@ -19,6 +19,11 @@ else
     listaPersonajes = personajesJson.LeerPersonajes("players_list");
 }
 // IMPRIMO POR CONSOLA LA LISTA DE PERSONAJES
+Console.Clear();
+System.Console.WriteLine("Bienvenid@ a A GAME OF ICE AND FIRE");
+Thread.Sleep(750);
+EscribirFrase("Por favor, elige tu personaje");
+Thread.Sleep(1000);
 MostrarListaPersonajes(listaPersonajes);
 
 string opcion = "";
@@ -108,8 +113,9 @@ personajesJson.GuardarPersonajes(listaPersonajes, "players_list");
 
 if (historialJson.ExisteListaPersonajes("winners_list"))
 {
-    MostrarListaPersonajes(historialJson.LeerGanadores("winners_list"));
+    Console.Clear();
     System.Console.WriteLine("LISTADO DE GANADORES HISTORICOS");
+    MostrarListaPersonajes(historialJson.LeerGanadores("winners_list"));
     System.Console.WriteLine("PRESIONE CUALQUIER TECLA PARA SALIR");
     Console.ReadKey();
 }
@@ -119,13 +125,12 @@ void EscribirFrase(string mensaje)
     foreach (char letra in mensaje)
     {
         Console.Write(letra);
-        Thread.Sleep(30);
+        Thread.Sleep(40);
     }
     Console.WriteLine();
 }
 void MostrarListaPersonajes(List<Personaje> listaPersonajes)
 {
-    Console.Clear();
     for (int i = 0; i < listaPersonajes.Count; i++)
     {
         System.Console.WriteLine("PERSONAJE:" + i);
