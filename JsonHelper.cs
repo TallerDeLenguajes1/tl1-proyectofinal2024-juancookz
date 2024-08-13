@@ -24,7 +24,7 @@ class PersonajesJson
         return ListaPersonajes;
     }
 
-    public bool Existe(string nombreArchivo)
+    public bool ExisteListaPersonajes(string nombreArchivo)
     {
         // intentamos ejecutar el siguiente bloque
         try
@@ -38,21 +38,27 @@ class PersonajesJson
         }
     }
 }
-    /*
-    public void Prueba()
+class HistorialJson
+{
+    public void GuardarGanador(Personaje personaje, string nombreArchivo)
     {
-        //Creamos una instancia de producto
-        Producto papas = new Producto
+    }
+    public List<Personaje> LeerGanadores(string nombreArchivo)
+    {
+        return null;
+    }
+    public bool ExisteListaPersonajes(string nombreArchivo)
+    {
+        // intentamos ejecutar el siguiente bloque
+        try
         {
-            Nombre = "Papas Fritas",
-            Precio = 30
-        };
-        //Serializamos en JSON el producto y lo guardamos como un string
-        string jsonString = JsonSerializer.Serialize(papas);
-        //Escribimos la cadena que se serializo
-        Console.WriteLine(jsonString);
-        //Ahora Deserealizamos la cadena JSNON y creamos un objeto Producto a partir de ella
-        Producto producto = JsonSerializer.Deserialize<Producto>(jsonString);
-        //Escribimos el producto que se deserializo
-        Console.WriteLine($"Nombre: {producto.Nombre} Precio: {producto.Precio}");
-    }*/
+            return System.IO.File.Exists(nombreArchivo) && LeerGanadores(nombreArchivo) != null;
+        }
+        // si llega a fallar,devolvemos existencia nula
+        catch (Exception)
+        {
+            return false;
+        }
+    }
+
+}

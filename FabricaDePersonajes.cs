@@ -21,8 +21,6 @@ public class FabricaDePersonajes
         AsignarCaracteristicas(personaje);
         return personaje;
     }
-
-
     private void AsignarCaracteristicas(Personaje personaje)
     {
         switch (personaje.tipo)
