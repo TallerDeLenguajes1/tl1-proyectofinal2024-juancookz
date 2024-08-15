@@ -97,3 +97,5 @@ artifacts/
 bin/
 obj/
 .DS_Store
+players_list
+winners_list
