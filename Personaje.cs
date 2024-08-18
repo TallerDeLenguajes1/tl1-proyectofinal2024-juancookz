@@ -31,6 +31,8 @@ public class Personaje
     public int Armadura { get; set; }
     public int Salud { get; set; }
 
+    public Guid id { get; set; }
+
     public void Mostrar()
     {
         
@@ -46,6 +48,6 @@ public class Personaje
         System.Console.WriteLine("Nivel: " + Nivel);
         System.Console.WriteLine("Armadura: " + Armadura);
         System.Console.WriteLine("Salud: " + Salud);
-        System.Console.WriteLine();
+        System.Console.WriteLine("GUID: " + id);
     }
 }

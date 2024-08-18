@@ -144,8 +144,8 @@ int Combate(Personaje atacante, Personaje defensor)
     int ataque = atacante.Destreza * atacante.Fuerza * atacante.Nivel;
     int efectividad = random.Next(1, 100);
     int defensa = defensor.Armadura * defensor.Velocidad;
-    int danio = ((ataque * efectividad) - defensa) / 500;
-    return danio;
+    int damage = ((ataque * efectividad) - defensa) / 500;
+    return damage;
 }
 
 bool Batalla(Personaje atacante, Personaje defensor)
