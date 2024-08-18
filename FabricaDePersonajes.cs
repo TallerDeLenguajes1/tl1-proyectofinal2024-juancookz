@@ -13,7 +13,7 @@ public class FabricaDePersonajes
             tipo = GenerarTipoAleatorio(),
             Nombre = respuestaApi.Personaje.Nombre,
             Frase = respuestaApi.Frase,
-            id = Guid.NewGuid(),
+            id = Guid.NewGuid().ToString(),
             FechaDeNacimiento = GenerarFechaAleatoria(),
             // Características
             Nivel = random.Next(1, 10),

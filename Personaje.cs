@@ -31,7 +31,7 @@ public class Personaje
     public int Armadura { get; set; }
     public int Salud { get; set; }
 
-    public Guid id { get; set; }
+    public string id { get; set; }
 
     public void Mostrar()
     {
